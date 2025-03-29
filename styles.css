@@ -1,0 +1,585 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --azul-pretoleo: #1A1F3C;
+  --roxo-forte: #7228C2;
+  --branco: #F1F1F1;
+  --preto: #333333;
+  --roxo-cinza: #6A4C9C;
+  --max-width: 1200px;
+  --header-font: "Bebas Neue", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Poppins;
+}
+
+#logo-grande{
+  display: flex;
+  width: 70%;
+}
+
+section{
+  width: 100%;
+  min-height: 100vh; /* Garante que a seção tenha no mínimo a altura da tela */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px; /* Garante espaçamento interno */
+  text-align: center;
+}
+
+.section + .section {
+  margin-top: 50px; /* Evita sobreposição entre as seções */
+}
+
+/*Home*/
+#titulo-home{
+  margin-right: 20px;
+}
+
+h1{
+  margin-bottom: 1rem;
+  font-size: 5rem;
+  font-weight: 400;
+  font-family: var(--header-font);
+  color: var(--preto);
+  line-height: 5.5rem;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+#text-roxo{
+  color: var(--roxo-forte);
+}
+
+#text-home{
+  text-align: left;
+}
+
+#img-home{
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) { /* Para telas menores, como tablets e celulares */
+  section {
+    flex-direction: column; /* Empilha os elementos em coluna */
+    text-align: center;
+  }
+
+  #container-left, 
+  #container-right {
+    width: 100%; /* Ocupa toda a largura da tela */
+  }
+
+  h1, #text-home {
+    text-align: center; /* Centraliza o texto */
+    text-wrap: nowrap;
+  }
+
+  #img-home {
+    max-width: 100%; /* Faz a imagem se ajustar ao tamanho da tela */
+    height: auto;
+    margin-top: 20px; /* Espaço entre o texto e a imagem */
+  }
+}
+
+
+
+/* From Uiverse.io by 0xnihilism */ 
+.brutalist-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 169px;
+  height: 60px;
+  background-color: var(--roxo-forte);
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  border: 3px solid #fff;
+  outline: 3px solid var(--roxo-forte);
+  box-shadow: 6px 6px 0 var(--roxo-cinza);
+  transition: all 0.1s ease-out;
+  padding: 0 15px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.brutalist-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  z-index: 1;
+  transition: none;
+  /* Initially hide the pseudo-element */
+  opacity: 0;
+}
+
+@keyframes slide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.brutalist-button:hover::before {
+  /* Show the pseudo-element on hover */
+  animation: slide 2s infinite;
+}
+
+.brutalist-button:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 #000;
+  background-color: var(--azul-pretoleo);
+  color: #fff;
+}
+
+@keyframes slide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.brutalist-button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0 #00a4ef;
+  background-color: var(--roxo-cinza);
+  color: var(--branco);
+  border-color: var(--roxo-forte);
+}
+
+/* Rest of the CSS remains the same */
+
+.ms-logo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  width: 26px;
+  height: 26px;
+  margin-right: 8px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.brutalist-button:hover .ms-logo {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.brutalist-button:active .ms-logo {
+  transform: rotate(10deg) scale(0.9);
+}
+
+.ms-logo-square {
+  width: 100%;
+  height: 100%;
+}
+
+.button-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  transition: transform 0.2s ease-out;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.brutalist-button:hover .button-text {
+  transform: skew(-5deg);
+}
+
+.brutalist-button:active .button-text {
+  transform: skew(5deg);
+}
+
+.button-text span:first-child {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.button-text span:last-child {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+#btn-span{
+  margin-top: 3px;
+}
+
+a {
+  width: 200px;
+  color: red;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav {
+  isolation: isolate;
+  width: 100%;
+  z-index: 9;
+  overflow-y: hidden;
+}
+
+.nav__header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--roxo-forte);
+}
+
+.nav__logo a {
+  background-image: url(assets/LogoNexyCorp.png);
+  background-size: 25px;
+  background-position-x: -25px;
+  background-repeat: no-repeat;
+  font-size: 1.75rem;
+  font-weight: 400;
+  font-family: var(--header-font);
+  color: var(--branco);
+}
+
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--branco);
+  cursor: pointer;
+}
+
+.nav__links {
+  cursor: pointer;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--roxo-forte);
+  transition: 0.5s;
+  z-index: -1;
+  transform: translateY(-100%);
+}
+
+.nav__links.open {
+  transform: translateY(0);
+}
+
+.nav__links a {
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--branco);
+}
+
+
+.nav__links a:hover {
+  color: var(--preto);
+}
+
+.nav__btns {
+  display: none;
+}
+ 
+
+@media (width > 768px) {
+  nav {
+    position: static;
+    padding-block: 2rem 0;
+    padding-inline: 1rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav__header {
+    flex: 1;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__logo a {
+    color: var(--preto);
+  }
+
+  .nav__logo a span {
+    color: var(--roxo-forte);
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    position: static;
+    padding: 0;
+    flex-direction: row;
+    background-color: transparent;
+    transform: none;
+  }
+
+  .nav__links a {
+    padding-block: 5px;
+    color: var(--preto);
+    border-bottom: 4px solid transparent;
+  }
+
+  .nav__links a:hover {
+    border-color: var(--roxo-forte);
+  }
+
+  .nav__btns {
+    display: flex;
+    flex: 1;
+  }
+
+  .nav__btns .btn {
+    padding: 0.75rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    white-space: nowrap;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+}
+
+h2{
+  font-family: var(--header-font);
+  font-size: 3rem;
+  letter-spacing: 4.5px;
+}
+
+.service_section {
+  text-align: center;
+}
+
+.service_section .heading_container {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.service_section .box {
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.service_section .box::before {
+  content: "";
+  width: 275px;
+  height: 275px;
+  position: absolute;
+  right: -137.5px;
+  bottom: -137.5px;
+  background-color: #faf8fd;
+  z-index: -1;
+  border-radius: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.service_section .box .img-box {
+  font-size: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 125px;
+  border-radius: 15px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.service_section .box .img-box img {
+  width: 75px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.service_section .box .detail-box {
+  margin-top: 15px;
+}
+
+.service_section .box .detail-box h5 {
+  font-weight: bold;
+  position: relative;
+}
+
+.service_section .box .detail-box a {
+  color: inherit;
+}
+
+.service_section .box:hover {
+  color: #ffffff;
+}
+
+.service_section .box:hover::before {
+  -webkit-transform: scale(5);
+  transform: scale(5);
+  background-color: #7335b7;
+}
+
+.service_section .box:hover img {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+.service_section .btn-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.service_section .btn-box a {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #7335b7;
+  color: #ffffff;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid #7335b7;
+}
+
+.service_section .btn-box a:hover {
+  color: #ffffff;
+  -webkit-transform: translateY(-3px);
+  transform: translateY(-3px);
+}
+
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col-md-6,  
+.col-lg-3, 
+.col-lg-auto, 
+.col-xl-auto {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+  .col-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+.floating-btn {
+  position: fixed;
+  bottom: 20px; /* Distância do fundo da tela */
+  right: 20px;  /* Distância da borda direita da tela */
+  background-color: var(--roxo-forte); /* Cor do fundo */
+  color: white; /* Cor do ícone */
+  padding: 15px;
+  border-radius: 100%;
+  font-size: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Garante que o botão fique acima dos outros elementos */
+  transition: background-color 0.3s ease;
+}
+
+/* Efeito de hover */
+.floating-btn:hover {
+  background-color: var(--roxo-cinza); /* Cor do fundo quando o botão é hover */
+  cursor: pointer;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  width: 50px;
+  text-align: center;
+  justify-content: center;
+  left: 20px;
+  background-color: #25D366;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50px;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.whatsapp-button:hover {
+  background-color: #1EBE5D;
+}
+
+.whatsapp-icon {
+  width: 24px;
+  height: 24px;
+}
